@@ -1,0 +1,1767 @@
+/* ==========================================================================
+   TRAVELWEB2500 - UNIFIED MASTER STYLESHEET (CSS-1.css)
+   ========================================================================== */
+
+/* ===== Preview Popup Hover (Image Only) ===== */
+.preview-popup {
+  position: absolute;
+  width: 280px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: none;
+  z-index: 9999;
+  pointer-events: none;
+  transition: 0.2s ease;
+  border: 2px solid #ffffff;
+}
+
+.preview-popup img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   1. MAIN PAGE STYLES (index.html)
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f6f8;
+}
+
+/* ===== ส่วนหัวและแถบนำทาง ===== */
+.header {
+  padding: 30px 24px 40px;
+  color: white;
+  background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.search-box {
+  margin-top: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+}
+
+/* ===== ปุ่มเลือกหมวดหมู่ ===== */
+.categories {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: white;
+}
+
+.categories button {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+.categories button.active {
+  background: #6366f1;
+  color: white;
+}
+
+/* ===== ตารางการ์ดสถานที่ ===== */
+.container {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 ใบต่อแถว */
+  gap: 20px;
+}
+
+/* ===== กล่องการ์ดสถานที่ ===== */
+.card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== ครอบรูปภาพการ์ด ===== */
+.card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* overlay ดำ */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.2));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 18px 18px 0 0;
+}
+
+/* ข้อความดูรายละเอียด */
+.card::before {
+  content: "ดูรายละเอียดเพิ่มเติม →";
+  position: absolute;
+  top: 140px;
+  left: 20px;
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  transform: translateY(10px);
+  z-index: 2;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== แท็กหมวดหมู่และคะแนน ===== */
+.tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #6366f1;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  z-index: 3;
+}
+
+.rating {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fff3cd;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  z-index: 3;
+}
+
+/* ===== เนื้อหาการ์ด ===== */
+.card-content {
+  padding: 15px;
+}
+
+.card h3 {
+  margin: 8px 0 5px;
+}
+
+.location {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.description {
+  font-size: 14px;
+  color: #444;
+  margin-top: 8px;
+}
+
+/* ===== ปุ่มจองทริปบนการ์ดสถานที่ ===== */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.card-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.card-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.35);
+  background: linear-gradient(135deg, #1d4ed8, #7e22ce);
+}
+
+/* ===== ส่วนแสดงเมื่อไม่พบผลลัพธ์การค้นหา ===== */
+.no-results {
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 18px;
+  color: #6b7280;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 10px;
+}
+
+/* ===== โมดอลจองทริปหน้าแรก ===== */
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.booking-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.booking-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.booking-modal-overlay.active .booking-modal {
+  transform: translateY(0) scale(1);
+}
+
+.booking-header {
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  position: relative;
+}
+
+.booking-header h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.booking-header p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.close-booking-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.close-booking-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.booking-body {
+  padding: 20px 24px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.booking-field {
+  margin-bottom: 15px;
+}
+
+.booking-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-field textarea:focus {
+  border-color: #6366f1;
+}
+
+.booking-price-summary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirm-booking-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+}
+
+.confirm-booking-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+.booking-success {
+  text-align: center;
+  padding: 20px 10px;
+  display: none;
+}
+
+.booking-success-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   2. DETAIL PAGES STYLES
+   ========================================================================== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f3f4f6;
+}
+.topbar {
+  background: white;
+  padding: 15px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  transition: all 0.25s ease;
+}
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+}
+.rating {
+  background: #fff3cd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.hero-container {
+  position: relative;
+  margin: 20px;
+}
+.hero {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.image-count {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin: 0 20px 20px 20px;
+  overflow-x: auto;
+}
+.thumbnail {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0.7;
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+.thumbnail.active {
+  opacity: 1;
+  border: 3px solid #6366f1;
+}
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+.box h2 {
+  margin-top: 0;
+  color: #1f2937;
+}
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.highlight-card {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+}
+.highlight-card h4 {
+  margin: 0 0 5px;
+  color: #4f46e5;
+}
+.highlight-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+.activity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 10px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+}
+.price-box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+}
+.price-label {
+  color: #6b7280;
+  font-size: 14px;
+}
+.price-big {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+}
+.per-person {
+  color: #9ca3af;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+.info-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background: #eef2ff;
+  color: #4f46e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.info-text {
+  font-weight: 600;
+  color: #374151;
+}
+.divider {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 20px 0;
+}
+.package-list {
+  padding-left: 0;
+  list-style: none;
+  font-size: 14px;
+  color: #4b5563;
+}
+.package-list li {
+  margin-bottom: 8px;
+}
+.book-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+  text-align: center;
+}
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+.review-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.review-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 15px;
+}
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.review-content {
+  flex: 1;
+}
+.star-badge {
+  color: #d97706;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+.booking-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.booking-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+}
+.booking-modal-overlay.active .booking-modal {
+  transform: translateY(0) scale(1);
+}
+.booking-header {
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  position: relative;
+}
+.booking-header h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+.close-booking-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.booking-body {
+  padding: 20px 24px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.booking-field {
+  margin-bottom: 15px;
+}
+.booking-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.booking-price-summary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.confirm-booking-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+.booking-success {
+  text-align: center;
+  padding: 20px 10px;
+  display: none;
+}
+.booking-success-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-img-wrapper {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  object-fit: contain;
+}
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+.lightbox-close {
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+.lightbox-prev {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+}
+.lightbox-next {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+}
+.lightbox-counter {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.lightbox-thumbnails {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.lightbox-thumbnails img {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 2px solid transparent;
+}
+.lightbox-thumbnails img.active {
+  opacity: 1;
+  border-color: #6366f1;
+}
+
+/* ===== Extra Detail Page Rules ===== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f3f4f6;
+}
+
+/* แถบด้านบนและนำทาง */
+.topbar {
+  background: white;
+  padding: 15px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+}
+
+.rating {
+  background: #fff3cd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero-container {
+  position: relative;
+  margin: 20px;
+}
+
+.hero {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.image-count {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Thumbnail */
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin: 0 20px 20px 20px;
+  overflow-x: auto;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0.7;
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border: 3px solid #6366f1;
+}
+
+/* Layout */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+/* ===== HIGHLIGHT CARD ===== */
+.highlight-card {
+  background: #eef2ff;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.check {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #6366f1, #9333ea);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* ===== ACTIVITY CARD ===== */
+.activity-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.activity-item {
+  background: #f1f5f9;
+  padding: 15px 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #6366f1;
+  border-radius: 50%;
+}
+
+/* ===== REVIEW CARD ===== */
+.review-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.review-item {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 15px;
+  background: #f9fafb;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-content small {
+  color: #6b7280;
+}
+
+.star-badge {
+  background: #fff3cd;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* PRICE CARD */
+.price-box {
+  background: #f3f4f6;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+}
+
+.price-big {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.book-btn {
+  margin-top: 30px;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  color: white;
+  text-align: center;
+  padding: 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* ===== โมดอลจองทริป ===== */
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.booking-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.booking-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.booking-modal-overlay.active .booking-modal {
+  transform: translateY(0) scale(1);
+}
+
+.booking-header {
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  position: relative;
+}
+
+.booking-header h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.booking-header p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.close-booking-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.close-booking-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.booking-body {
+  padding: 20px 24px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.booking-field {
+  margin-bottom: 15px;
+}
+
+.booking-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-field textarea:focus {
+  border-color: #6366f1;
+}
+
+.booking-price-summary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirm-booking-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+}
+
+.confirm-booking-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+.booking-success {
+  text-align: center;
+  padding: 20px 10px;
+  display: none;
+}
+
+.booking-success-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Lightbox Fullscreen Modal ===== */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 15, 29, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 20005;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 20005;
+}
+
+.lightbox-prev {
+  left: 24px;
+}
+
+.lightbox-next {
+  right: 24px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.lightbox-content img {
+  max-width: 85vw;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-counter {
+  margin-top: 14px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.lightbox-thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.lightbox-thumbnails img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.lightbox-thumbnails img.active {
+  opacity: 1;
+  border-color: #6366f1;
+  transform: scale(1.05);
+}
+
+.hero-container {
+  position: relative;
+}
+
+.hero-container .hero {
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.hero-container:hover .hero {
+  filter: brightness(0.95);
+}
+
+.expand-img-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.expand-img-btn:hover {
+  background: rgba(99, 102, 241, 0.9);
+  transform: translateY(-2px);
+}
+
+.topbar {
+  background: white;
+  padding: 15px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.booking-header p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.close-booking-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.confirm-booking-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+}
+
+/* Highlight Grid */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.highlight-card {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Activities */
+.activity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+}
+
+/* Price Box */
+.price-box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+}
+
+.info-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background: #eef2ff;
+  color: #4f46e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+/* Reviews */
+.review-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.review-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 15px;
+}
+
+/* โมดอลจองทริป */
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.booking-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.close-booking-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.close-booking-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.booking-price-summary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirm-booking-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
