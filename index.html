@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>สถานที่ท่องเที่ยว</title>
+    <link rel="stylesheet" href="CSS-1.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-top">
+        <h1>สถานที่ท่องเที่ยว ✨</h1>
+        <div style="display: flex; gap: 10px; align-items: center">
+          <a href="Web.html" class="nav-btn">🏠 หน้าแรก</a>
+          <button
+            type="button"
+            class="nav-btn"
+            onclick="openBookingHistoryModal()"
+          >
+            📜 ประวัติการจอง
+          </button>
+        </div>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="ค้นหาสถานที่ท่องเที่ยว..." />
+      </div>
+    </div>
+
+    <div class="categories">
+      <button class="active" data-category="ทั้งหมด">ทั้งหมด</button>
+      <button data-category="ชายหาด">ชายหาด</button>
+      <button data-category="วัฒนธรรม">วัฒนธรรม</button>
+      <button data-category="ประวัติศาสตร์">ประวัติศาสตร์</button>
+      <button data-category="ธรรมชาติ">ธรรมชาติ</button>
+    </div>
+
+    <div class="container">
+      <div class="grid">
+        <!-- วัดพระแก้ว -->
+        <a href="พระแก้ว-1.html" class="card" data-category="วัฒนธรรม">
+          <div class="card-image">
+            <img src="image/วัดพระแก้ว2.jpg" />
+            <span class="tag">วัฒนธรรม</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <div class="card-content">
+            <h3>วัดพระแก้ว</h3>
+            <div class="location">📍 กรุงเทพมหานคร</div>
+            <div class="description">
+              <p>
+                สถานที่ท่องเที่ยวสำคัญและสวยงามที่สุดแห่งหนึ่งในกรุงเทพฯ
+                มีสถาปัตยกรรมไทยโบราณที่งดงาม
+              </p>
+              <div class="card-footer">
+                <p class="season" style="margin: 0">🕒 พฤศจิกายน - เมษายน</p>
+                <button
+                  class="card-book-btn"
+                  onclick="
+                    openHomeBookingModal(
+                      event,
+                      'วัดพระแก้ว',
+                      'กรุงเทพมหานคร',
+                      2500,
+                    )
+                  "
+                >
+                  💳 จองทริป
+                </button>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- เกาะพีพี -->
+        <a href="พีพี-1.html" class="card" data-category="ชายหาด">
+          <div class="card-image">
+            <img src="image/พีพี 2.jpeg" />
+            <span class="tag">ชายหาด</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          <div class="card-content">
+            <h3>เกาะพีพี</h3>
+            <div class="location">📍 กระบี่</div>
+            <div class="description">
+              <p>
+                เกาะสวรรค์ท่ามกลางทะเลอันดามัน น้ำทะเลใสและหน้าผาหินปูนสวยงาม
+              </p>
+              <div class="card-footer">
+                <p class="season" style="margin: 0">🕒 พฤศจิกายน - เมษายน</p>
+                <button
+                  class="card-book-btn"
+                  onclick="
+                    openHomeBookingModal(event, 'เกาะพีพี', 'กระบี่', 2500)
+                  "
+                >
+                  💳 จองทริป
+                </button>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- อยุธยา -->
+        <a href="อุทยาน-1.html" class="card" data-category="ประวัติศาสตร์">
+          <div class="card-image">
+            <img src="image/อุทยาน 1.jpg" />
+            <span class="tag">ประวัติศาสตร์</span>
+            <span class="rating">⭐ 4.7</span>
+          </div>
+          <div class="card-content">
+            <h3>อุทยานประวัติศาสตร์พระนครศรีอยุธยา</h3>
+            <div class="location">📍 พระนครศรีอยุธยา</div>
+            <div class="description">
+              <p>เมืองเก่ามรดกโลก เต็มไปด้วยซากวัดและพระราชวังโบราณ</p>
+              <div class="card-footer">
+                <p class="season" style="margin: 0">🕒 พฤศจิกายน - เมษายน</p>
+                <button
+                  class="card-book-btn"
+                  onclick="
+                    openHomeBookingModal(
+                      event,
+                      'อุทยานประวัติศาสตร์พระนครศรีอยุธยา',
+                      'พระนครศรีอยุธยา',
+                      1800,
+                    )
+                  "
+                >
+                  💳 จองทริป
+                </button>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ไร่เลย์ -->
+        <a href="ไร่เลย์-1.html" class="card" data-category="ธรรมชาติ">
+          <div class="card-image">
+            <img src="image/ไร่เลย์ 1.jpeg" />
+            <span class="tag">ธรรมชาติ</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <div class="card-content">
+            <h3>อ่าวไร่เลย์</h3>
+            <div class="location">📍 กระบี่</div>
+            <div class="description">
+              <p>หาดล้อมรอบด้วยหน้าผาหินปูน เหมาะสำหรับปีนผาและพักผ่อน</p>
+              <div class="card-footer">
+                <p class="season" style="margin: 0">🕒 พฤศจิกายน - เมษายน</p>
+                <button
+                  class="card-book-btn"
+                  onclick="
+                    openHomeBookingModal(event, 'อ่าวไร่เลย์', 'กระบี่', 2200)
+                  "
+                >
+                  💳 จองทริป
+                </button>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="น้ำ-1.html" class="card" data-category="วัฒนธรรม">
+          <div class="card-image">
+            <img src="image/น้ำ 1.jpg" alt="ตลาดน้ำดำเนินสะดวก" />
+            <span class="tag">วัฒนธรรม</span>
+            <span class="rating">⭐ 4.5</span>
+          </div>
+          <div class="card-content">
+            <h3>ตลาดน้ำดำเนินสะดวก</h3>
+            <p class="location">📍 ราชบุรี</p>
+            <p>ตลาดน้ำชื่อดัง ขายสินค้าและอาหารพื้นเมืองบนเรือ</p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 ตลอดปี</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(
+                    event,
+                    'ตลาดน้ำดำเนินสะดวก',
+                    'ราชบุรี',
+                    1500,
+                  )
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- หาดป่าตอง -->
+        <a href="หาด-1.html" class="card" data-category="ชายหาด">
+          <div class="card-image">
+            <img src="image/หาด 2.jpg" alt="หาดป่าตอง" />
+            <span class="tag">ชายหาด</span>
+            <span class="rating">⭐ 4.6</span>
+          </div>
+          <div class="card-content">
+            <h3>หาดป่าตอง</h3>
+            <p class="location">📍 ภูเก็ต</p>
+            <p>หาดยอดนิยม มีกิจกรรมทางน้ำ ร้านอาหาร และชีวิตกลางคืน</p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 พฤศจิกายน - มีนาคม</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(event, 'หาดป่าตอง', 'ภูเก็ต', 1900)
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- ดอยอินทนนท์ -->
+        <a href="อินทนนท์-1.html" class="card" data-category="ธรรมชาติ">
+          <div class="card-image">
+            <img src="image/อินทนนท์-1.jpg" alt="ดอยอินทนนท์" />
+            <span class="tag">ธรรมชาติ</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <div class="card-content">
+            <h3>ดอยอินทนนท์</h3>
+            <p class="location">📍 เชียงใหม่</p>
+            <p>
+              ยอดเขาที่สูงที่สุดในประเทศไทย สัมผัสอากาศหนาวเย็น
+              ชมทะเลหมอกและพระมหาธาตุเจดีย์
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 พฤศจิกายน - กุมภาพันธ์</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(event, 'ดอยอินทนนท์', 'เชียงใหม่', 2800)
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- เขาสก -->
+        <a href="เขาสก-1.html" class="card" data-category="ธรรมชาติ">
+          <div class="card-image">
+            <img src="image/เขาสก 1.jpg" alt="เขาสก เขื่อนเชี่ยวหลาน" />
+            <span class="tag">ธรรมชาติ</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <div class="card-content">
+            <h3>เขาสก / เขื่อนเชี่ยวหลาน</h3>
+            <p class="location">📍 สุราษฎร์ธานี</p>
+            <p>
+              กุ้ยหลินเมืองไทย ล่องแพผืนน้ำสีเขียวมรกต ล้อมรอบด้วยเขาวงกตหินปูน
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 ตลอดปี</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(
+                    event,
+                    'เขาสก เขื่อนเชี่ยวหลาน',
+                    'สุราษฎร์ธานี',
+                    3200,
+                  )
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- วัดร่องขุ่น -->
+        <a href="วัดร่องขุ่น-1.html" class="card" data-category="วัฒนธรรม">
+          <div class="card-image">
+            <img src="image/วัดร่องขุ่น 1.jpg" alt="วัดร่องขุ่น" />
+            <span class="tag">วัฒนธรรม</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          <div class="card-content">
+            <h3>วัดร่องขุ่น</h3>
+            <p class="location">📍 เชียงราย</p>
+            <p>
+              วัดสีขาวบริสุทธิ์ผลงานศิลปะระดับโลก
+              ออกแบบและสร้างโดยอาจารย์เฉลิมชัย โฆษิตพิพัฒน์
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 ตลอดปี</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(event, 'วัดร่องขุ่น', 'เชียงราย', 2400)
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- เกาะหลีเป๊ะ -->
+        <a href="หลีเป๊ะ-1.html" class="card" data-category="ชายหาด">
+          <div class="card-image">
+            <img src="image/หลีเป๊ะ 1.jpg" alt="เกาะหลีเป๊ะ" />
+            <span class="tag">ชายหาด</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <div class="card-content">
+            <h3>เกาะหลีเป๊ะ</h3>
+            <p class="location">📍 สตูล</p>
+            <p>
+              มัลดีฟส์เมืองไทย หาดทรายขาวละเอียดราวแป้ง และน้ำทะเลใสเห็นปะการัง
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 พฤศจิกายน - พฤษภาคม</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(event, 'เกาะหลีเป๊ะ', 'สตูล', 3500)
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- ภูกระดึง -->
+        <a href="ภูกระดึง-1.html" class="card" data-category="ธรรมชาติ">
+          <div class="card-image">
+            <img src="image/ภูกระดึง 1.jpg" alt="ภูกระดึง" />
+            <span class="tag">ธรรมชาติ</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          <div class="card-content">
+            <h3>อุทยานแห่งชาติภูกระดึง</h3>
+            <p class="location">📍 เลย</p>
+            <p>
+              ผู้พิชิตผาหล่มสัก พิสูจน์รักบนยอดภูกระดึง
+              ชมพระอาทิตย์ตกดินสุดโรแมนติก
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 ตุลาคม - พฤษภาคม</p>
+              <button
+                class="card-book-btn"
+                onclick="openHomeBookingModal(event, 'ภูกระดึง', 'เลย', 2200)"
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- อุทยานประวัติศาสตร์สุโขทัย -->
+        <a href="สุโขทัย-1.html" class="card" data-category="ประวัติศาสตร์">
+          <div class="card-image">
+            <img src="image/สุโขทัย 1.jpg" alt="อุทยานประวัติศาสตร์สุโขทัย" />
+            <span class="tag">ประวัติศาสตร์</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          <div class="card-content">
+            <h3>อุทยานประวัติศาสตร์สุโขทัย</h3>
+            <p class="location">📍 สุโขทัย</p>
+            <p>
+              รุ่งอรุณแห่งความสุข มรดกโลกปั่นจักรยานชมโบราณสถานและวัดมหาธาตุ
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 ตลอดปี</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(
+                    event,
+                    'อุทยานประวัติศาสตร์สุโขทัย',
+                    'สุโขทัย',
+                    1900,
+                  )
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- เกาะเต่า -->
+        <a href="เกาะเต่า-1.html" class="card" data-category="ชายหาด">
+          <div class="card-image">
+            <img src="image/เกาะเต่า 1.jpg" alt="เกาะเต่า" />
+            <span class="tag">ชายหาด</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <div class="card-content">
+            <h3>เกาะเต่า / เกาะนางยวน</h3>
+            <p class="location">📍 สุราษฎร์ธานี</p>
+            <p>
+              สวรรค์ของนักดำน้ำระดับโลก
+              ใต้ท้องทะเลสมบูรณ์ไปด้วยเต่าทะเลและปะการัง
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 กุมภาพันธ์ - กันยายน</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(
+                    event,
+                    'เกาะเต่า เกาะนางยวน',
+                    'สุราษฎร์ธานี',
+                    3800,
+                  )
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- เขาใหญ่ -->
+        <a href="เขาใหญ่-1.html" class="card" data-category="ธรรมชาติ">
+          <div class="card-image">
+            <img src="image/เขาใหญ่ 1.jpg" alt="อุทยานแห่งชาติเขาใหญ่" />
+            <span class="tag">ธรรมชาติ</span>
+            <span class="rating">⭐ 4.7</span>
+          </div>
+          <div class="card-content">
+            <h3>อุทยานแห่งชาติเขาใหญ่</h3>
+            <p class="location">📍 นครราชสีมา</p>
+            <p>
+              ผืนป่ามรดกโลกใกล้นครหลวง
+              ส่องสัตว์ยามค่ำคืนและน้ำตกเหวนร้อยความสดชื่น
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 ตลอดปี</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(
+                    event,
+                    'อุทยานแห่งชาติเขาใหญ่',
+                    'นครราชสีมา',
+                    1800,
+                  )
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <!-- วัดพระธาตุดอยสุเทพ -->
+        <a href="ดอยสุเทพ-1.html" class="card" data-category="วัฒนธรรม">
+          <div class="card-image">
+            <img src="image/ดอยสุเทพ 1.jpg" alt="วัดพระธาตุดอยสุเทพ" />
+            <span class="tag">วัฒนธรรม</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <div class="card-content">
+            <h3>วัดพระธาตุดอยสุเทพ</h3>
+            <p class="location">📍 เชียงใหม่</p>
+            <p>
+              ปูชนียสถานคู่บ้านคู่เมืองเชียงใหม่
+              สักการะองค์พระธาตุเจดีย์สีทองสุกง่ามชมทิวทัศน์เมือง
+            </p>
+            <div class="card-footer">
+              <p class="season" style="margin: 0">🕒 ตลอดปี</p>
+              <button
+                class="card-book-btn"
+                onclick="
+                  openHomeBookingModal(
+                    event,
+                    'วัดพระธาตุดอยสุเทพ',
+                    'เชียงใหม่',
+                    1600,
+                  )
+                "
+              >
+                💳 จองทริป
+              </button>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="noResults" class="no-results" style="display: none">
+        🔍 ไม่พบสถานที่ท่องเที่ยวที่ตรงกับการค้นหา
+      </div>
+    </div>
+
+    <!-- โมดอลฟอร์มจองทริปหน้าแรก -->
+    <div id="homeBookingModal" class="booking-modal-overlay">
+      <div class="booking-modal">
+        <div class="booking-header">
+          <button class="close-booking-btn" onclick="closeHomeBookingModal()">
+            ✕
+          </button>
+          <h2>✈️ แบบฟอร์มจองแพ็กเกจท่องเที่ยว</h2>
+          <p id="homeBookingPackageTitle">จองทริปท่องเที่ยว</p>
+        </div>
+
+        <div class="booking-body">
+          <form id="homeBookingForm" onsubmit="submitHomeBooking(event)">
+            <div class="booking-field">
+              <label>👤 ชื่อ-นามสกุล ผู้เดินทางหลัก *</label>
+              <input
+                type="text"
+                id="homeCustName"
+                required
+                placeholder="กรอกชื่อ-นามสกุล"
+              />
+            </div>
+
+            <div class="booking-field">
+              <label>📞 เบอร์โทรศัพท์ติดต่อ *</label>
+              <input
+                type="tel"
+                id="homeCustPhone"
+                required
+                placeholder="08X-XXX-XXXX"
+              />
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px"
+            >
+              <div class="booking-field">
+                <label>📅 วันที่ออกเดินทาง *</label>
+                <input type="date" id="homeTravelDate" required />
+              </div>
+              <div class="booking-field">
+                <label>👥 จำนวนผู้เดินทาง *</label>
+                <select id="homePersonCount" onchange="updateHomeTotalPrice()">
+                  <option value="1">1 คน</option>
+                  <option value="2" selected>2 คน</option>
+                  <option value="3">3 คน</option>
+                  <option value="4">4 คน</option>
+                  <option value="5">5 คนขึ้นไป</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <label>📝 หมายเหตุเพิ่มเติม (ถ้ามี)</label>
+              <textarea
+                id="homeSpecialReq"
+                rows="2"
+                placeholder="ความต้องการเพิ่มเติม"
+              ></textarea>
+            </div>
+
+            <div class="booking-price-summary">
+              <div>
+                <div style="font-size: 12px; color: #6b7280">ราคารวมสุทธิ</div>
+                <div
+                  id="homeTotalPriceDisplay"
+                  style="font-size: 22px; font-weight: bold; color: #2563eb"
+                >
+                  ฿5,000
+                </div>
+              </div>
+              <div style="font-size: 12px; color: #10b981; font-weight: 600">
+                ✓ ฟรีค่าธรรมเนียม
+              </div>
+            </div>
+
+            <button type="submit" class="confirm-booking-btn">
+              💳 ยืนยันการจองทริป
+            </button>
+          </form>
+
+          <!-- หน้าแสดงความสำเร็จในการจอง -->
+          <div id="homeBookingSuccess" class="booking-success">
+            <div class="booking-success-icon">🎉</div>
+            <h3 style="margin: 0 0 5px; color: #166534">
+              จองแพ็กเกจท่องเที่ยวสำเร็จ!
+            </h3>
+            <p style="margin: 0 0 15px; font-size: 14px; color: #4b5563">
+              ขอบคุณที่ไว้วางใจ ทางเจ้าหน้าที่จะติดต่อกลับยืนยันภายใน 24 ชม.
+            </p>
+
+            <div
+              style="
+                background: #f8fafc;
+                padding: 15px;
+                border-radius: 14px;
+                border: 1px solid #e2e8f0;
+                text-align: left;
+                font-size: 13px;
+                margin-bottom: 15px;
+                line-height: 1.6;
+              "
+            >
+              <div>
+                <strong>รหัสการจอง:</strong>
+                <span
+                  id="homeResBookingId"
+                  style="color: #2563eb; font-weight: bold"
+                  >#TRIP-884920</span
+                >
+              </div>
+              <div>
+                <strong>แพ็กเกจ:</strong> <span id="homeResPackageTitle"></span>
+              </div>
+              <div>
+                <strong>ชื่อผู้เดินทาง:</strong>
+                <span id="homeResCustName"></span>
+              </div>
+              <div>
+                <strong>วันที่เดินทาง:</strong>
+                <span id="homeResTravelDate"></span>
+              </div>
+              <div>
+                <strong>จำนวนผู้เดินทาง:</strong>
+                <span id="homeResPersonCount"></span>
+              </div>
+              <div>
+                <strong>ยอดเงินรวมสุทธิ:</strong>
+                <span
+                  id="homeResTotalPrice"
+                  style="color: #166534; font-weight: bold"
+                ></span>
+              </div>
+            </div>
+
+            <button
+              onclick="closeHomeBookingModal()"
+              style="
+                width: 100%;
+                padding: 12px;
+                border-radius: 12px;
+                background: #e5e7eb;
+                border: none;
+                font-weight: bold;
+                cursor: pointer;
+              "
+            >
+              เสร็จสิ้น / ปิดหน้าต่าง
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- โมดอลแสดงประวัติการจอง -->
+    <div id="bookingHistoryModal" class="booking-modal-overlay">
+      <div class="booking-modal" style="max-width: 580px">
+        <div
+          class="booking-header"
+          style="background: linear-gradient(135deg, #4f46e5, #06b6d4)"
+        >
+          <button
+            class="close-booking-btn"
+            onclick="closeBookingHistoryModal()"
+          >
+            ✕
+          </button>
+          <h2>📜 ประวัติการจองแพ็กเกจ</h2>
+          <p>รายการทริปท่องเที่ยวที่คุณได้ทำการจองไว้</p>
+        </div>
+        <div class="booking-body" id="bookingHistoryList">
+          <!-- รายการประวัติการจองจะถูกโหลดและสร้างโดย JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <div id="previewPopup" class="preview-popup">
+      <img id="previewImg" src="" alt="พรีวิวรูปภาพ" />
+    </div>
+
+    <script src="JavaS-1.js"></script>
+  </body>
+</html>
