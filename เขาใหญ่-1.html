@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>อุทยานแห่งชาติเขาใหญ่</title>
+    <link rel="stylesheet" href="CSS-1.css" />
+  </head>
+
+  <body>
+    <div class="topbar">
+      <div class="top-left">
+        <a href="index.html" class="back-btn">← หน้าแรก</a>
+        <h2 style="margin: 0; font-size: 20px">อุทยานแห่งชาติเขาใหญ่</h2>
+      </div>
+      <div class="rating">⭐ 4.7 (510 รีวิว)</div>
+    </div>
+
+    <div class="hero-container">
+      <img
+        src="image/เขาใหญ่ 1.jpg"
+        id="mainImage"
+        class="hero"
+        onclick="openLightbox(currentImgIndex)"
+      />
+      <div class="image-count" id="imageCount">1 / 4</div>
+    </div>
+
+    <div class="thumbnail-container">
+      <img
+        src="image/เขาใหญ่ 1.jpg"
+        class="thumbnail active"
+        onclick="changeImage(this, 'image/เขาใหญ่ 1.jpg', 0)"
+      />
+      <img
+        src="image/เขาใหญ่ 2.jpg"
+        class="thumbnail"
+        onclick="changeImage(this, 'image/เขาใหญ่ 2.jpg', 1)"
+      />
+      <img
+        src="image/เขาใหญ่ 3.jpg"
+        class="thumbnail"
+        onclick="changeImage(this, 'image/เขาใหญ่ 3.jpg', 2)"
+      />
+      <img
+        src="image/เขาใหญ่ 4.jpg"
+        class="thumbnail"
+        onclick="changeImage(this, 'image/เขาใหญ่ 4.jpg', 3)"
+      />
+    </div>
+
+    <div class="content">
+      <div>
+        <div class="box">
+          <h2>เกี่ยวกับอุทยานแห่งชาติเขาใหญ่</h2>
+          <p>
+            อุทยานแห่งชาติเขาใหญ่ เป็นอุทยานแห่งชาติแห่งแรกของประเทศไทย
+            และเป็นมรดกโลกทางธรรมชาติ ครอบคลุมพื้นที่ 4 จังหวัด
+            มีธรรมชาติที่อุดมสมบูรณ์ น้ำตกสวยงามหลายแห่ง เช่น น้ำตกเหวนรก
+            น้ำตกเหวสุวัต รวมถึงจุดชมทิวทัศน์ผาเดียวดาย
+            และเป็นแหล่งส่องสัตว์ป่ายามค่ำคืนชั้นยอด
+          </p>
+        </div>
+
+        <div class="box">
+          <h2>ไฮไลท์สำคัญ</h2>
+          <div class="highlight-grid">
+            <div class="highlight-card">
+              <h4>💦 น้ำตกเหวสุวัต & เหวนรก</h4>
+              <p>น้ำตกสายใหญ่ไหลตกลงสู่แอ่งน้ำท่ามกลางป่าสมบูรณ์</p>
+            </div>
+            <div class="highlight-card">
+              <h4>🐘 ส่องสัตว์ยามค่ำคืน (Night Safari)</h4>
+              <p>นั่งรถส่องสัตว์ชมช้างป่า เก้ง กวาง และสัตว์ป่านานาชนิด</p>
+            </div>
+            <div class="highlight-card">
+              <h4>🌄 จุดชมวิวผาเดียวดาย</h4>
+              <p>จุดชมทิวทัศน์ทะเลหมอกและทิวเขาเขียวขจีทอดตัวยาว</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <h2>กิจกรรมที่น่าสนใจ</h2>
+          <div class="activity-grid">
+            <div class="activity-item">
+              <div class="dot"></div>
+              เที่ยวชมน้ำตกเหวสุวัตและเหวนรก
+            </div>
+            <div class="activity-item">
+              <div class="dot"></div>
+              นั่งรถส่องสัตว์ Night Safari
+            </div>
+            <div class="activity-item">
+              <div class="dot"></div>
+              เดินเส้นทางศึกษาธรรมชาติค่ายสุรัสวดี
+            </div>
+            <div class="activity-item">
+              <div class="dot"></div>
+              ชมวิวพระอาทิตย์ขึ้นที่ผาเดียวดาย
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="route-card"
+          style="
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 10px;
+              margin-bottom: 15px;
+            "
+          >
+            <h2 style="margin: 0">🗺️ เส้นทางและการเดินทาง</h2>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=อุทยานแห่งชาติเขาใหญ่"
+                target="_blank"
+                class="nav-map-btn"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  padding: 10px 18px;
+                  border-radius: 20px;
+                  background: linear-gradient(135deg, #10b981, #059669);
+                  color: white;
+                  text-decoration: none;
+                  font-weight: bold;
+                  font-size: 14px;
+                  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+                "
+              >
+                🚀 นำทางทันทีจากตำแหน่งปัจจุบัน
+              </a>
+              <button
+                type="button"
+                onclick="
+                  loadLiveRoute(
+                    'อุทยานแห่งชาติเขาใหญ่',
+                    'detailMapIframe',
+                    'routeStatusMsg',
+                  )
+                "
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  padding: 10px 18px;
+                  border-radius: 20px;
+                  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                  color: white;
+                  border: none;
+                  font-weight: bold;
+                  font-size: 14px;
+                  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                  cursor: pointer;
+                "
+              >
+                🧭 แสดงเส้นทางบนแผนที่ด้านล่าง
+              </button>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 15px;
+              margin-bottom: 15px;
+            "
+          >
+            <div
+              style="
+                background: #f8fafc;
+                padding: 15px;
+                border-radius: 12px;
+                border: 1px solid #e2e8f0;
+              "
+            >
+              <h4 style="margin: 0 0 5px; color: #1e293b">
+                🚗 โดยรถยนต์ส่วนตัว
+              </h4>
+              <p style="margin: 0; font-size: 14px; color: #475569">
+                ใช้ถนนมิตรภาพ (ทางหลวงหมายเลข 2) เลี้ยวเข้าถนนธนะรัชต์ (ทางหลวง
+                2090) มุ่งตรงสู่ด่านตรวจปากช่อง ขึ้นสู่เขาใหญ่ (ใช้เวลาประมาณ
+                2.5 ชม.)
+              </p>
+            </div>
+            <div
+              style="
+                background: #f8fafc;
+                padding: 15px;
+                border-radius: 12px;
+                border: 1px solid #e2e8f0;
+              "
+            >
+              <h4 style="margin: 0 0 5px; color: #1e293b">
+                🚌 รถประจำทาง / รถตู้
+              </h4>
+              <p style="margin: 0; font-size: 14px; color: #475569">
+                ขึ้นรถตู้จากหมอชิตไปลงปากช่อง ต่อรถสองแถวสายปากช่อง-เขาใหญ่
+                ลงที่ด่านทางเข้าอุทยานฯ
+              </p>
+            </div>
+          </div>
+
+          <div
+            id="routeStatusMsg"
+            style="font-size: 13px; margin-bottom: 8px; font-weight: 600"
+          ></div>
+          <div
+            style="
+              border-radius: 16px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              height: 260px;
+            "
+          >
+            <iframe
+              id="detailMapIframe"
+              src="https://maps.google.com/maps?q=อุทยานแห่งชาติเขาใหญ่&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <h2>รีวิวจากนักท่องเที่ยว</h2>
+          <div class="review-item">
+            <img src="image/ต 8.jpg" class="avatar" />
+            <div class="review-content">
+              <strong>นพดล เจริญสุข</strong> <span class="star-badge">⭐ 5</span
+              ><br />
+              <small>5 กุมภาพันธ์ 2569</small>
+              <p>
+                อากาศดีมากๆ ส่องสัตว์ตอนกลางคืนเจอกวางกับโขลงช้างป่า
+                ประทับใจกับการดูแลของเจ้าหน้าที่ครับ
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <div class="price-label">💲 ช่วงราคา</div>
+        <div class="price-big">฿1,800 - ฿3,200</div>
+        <div class="per-person">ต่อคน</div>
+
+        <div class="info-row">
+          <div class="icon-circle">⏰</div>
+          <div>
+            <small>ระยะเวลา</small>
+            <div class="info-text">1 วันเต็ม (8 ชั่วโมง)</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="icon-circle">📅</div>
+          <div>
+            <small>เวลาที่เหมาะสม</small>
+            <div class="info-text">ตลอดทั้งปี</div>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <h3>รวมในแพ็กเกจ</h3>
+        <ul class="package-list">
+          <li>✔ รถยนต์ส่วนตัวพร้อมคนขับ รับ-ส่ง</li>
+          <li>✔ บัตรผ่านประตูอุทยานแห่งชาติเขาใหญ่</li>
+          <li>✔ กิจกรรมส่องสัตว์ยามค่ำคืน (Night Safari)</li>
+          <li>✔ อาหารกลางวันสไตล์ไทยสดใหม่</li>
+          <li>✔ ประกันอุบัติเหตุการเดินทาง</li>
+        </ul>
+
+        <div class="book-btn" onclick="openBookingModal()">จองทริปเลย</div>
+      </div>
+    </div>
+
+    <div id="bookingModal" class="booking-modal-overlay">
+      <div class="booking-modal">
+        <div class="booking-header">
+          <button class="close-booking-btn" onclick="closeBookingModal()">
+            ✕
+          </button>
+          <h2>✈️ แบบฟอร์มจองแพ็กเกจท่องเที่ยว</h2>
+          <p id="bookingPackageTitle">จองทริป: อุทยานแห่งชาติเขาใหญ่</p>
+        </div>
+
+        <div class="booking-body">
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="booking-field">
+              <label>👤 ชื่อ-นามสกุล ผู้เดินทางหลัก *</label>
+              <input
+                type="text"
+                id="custName"
+                required
+                placeholder="กรอกชื่อ-นามสกุล"
+              />
+            </div>
+
+            <div class="booking-field">
+              <label>📞 เบอร์โทรศัพท์ติดต่อ *</label>
+              <input
+                type="tel"
+                id="custPhone"
+                required
+                placeholder="08X-XXX-XXXX"
+              />
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px"
+            >
+              <div class="booking-field">
+                <label>📅 วันที่ออกเดินทาง *</label>
+                <input type="date" id="travelDate" required />
+              </div>
+              <div class="booking-field">
+                <label>👥 จำนวนผู้เดินทาง *</label>
+                <select id="personCount" onchange="updateTotalPrice()">
+                  <option value="1">1 คน</option>
+                  <option value="2" selected>2 คน</option>
+                  <option value="3">3 คน</option>
+                  <option value="4">4 คน</option>
+                  <option value="5">5 คนขึ้นไป</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <label>📝 หมายเหตุเพิ่มเติม (ถ้ามี)</label>
+              <textarea
+                id="specialReq"
+                rows="2"
+                placeholder="ความต้องการเพิ่มเติม"
+              ></textarea>
+            </div>
+
+            <div class="booking-price-summary">
+              <div>
+                <div style="font-size: 12px; color: #6b7280">ราคารวมสุทธิ</div>
+                <div
+                  id="totalPriceDisplay"
+                  style="font-size: 22px; font-weight: bold; color: #2563eb"
+                >
+                  ฿3,600
+                </div>
+              </div>
+              <div style="font-size: 12px; color: #10b981; font-weight: 600">
+                ✓ ฟรีค่าธรรมเนียม
+              </div>
+            </div>
+
+            <button type="submit" class="confirm-booking-btn">
+              💳 ยืนยันการจองทริป
+            </button>
+          </form>
+
+          <div id="bookingSuccess" class="booking-success">
+            <div class="booking-success-icon">🎉</div>
+            <h3 style="margin: 0 0 5px; color: #166534">
+              จองแพ็กเกจท่องเที่ยวสำเร็จ!
+            </h3>
+            <p style="margin: 0 0 15px; font-size: 14px; color: #4b5563">
+              ขอบคุณที่ไว้วางใจ ทางเจ้าหน้าที่จะติดต่อกลับยืนยันภายใน 24 ชม.
+            </p>
+
+            <div
+              style="
+                background: #f8fafc;
+                padding: 15px;
+                border-radius: 14px;
+                border: 1px solid #e2e8f0;
+                text-align: left;
+                font-size: 13px;
+                margin-bottom: 15px;
+                line-height: 1.6;
+              "
+            >
+              <div>
+                <strong>รหัสการจอง:</strong>
+                <span
+                  id="resBookingId"
+                  style="color: #2563eb; font-weight: bold"
+                ></span>
+              </div>
+              <div>
+                <strong>ชื่อผู้เดินทาง:</strong> <span id="resCustName"></span>
+              </div>
+              <div>
+                <strong>วันที่เดินทาง:</strong> <span id="resTravelDate"></span>
+              </div>
+              <div>
+                <strong>จำนวนผู้เดินทาง:</strong>
+                <span id="resPersonCount"></span>
+              </div>
+              <div>
+                <strong>ยอดเงินรวมสุทธิ:</strong>
+                <span
+                  id="resTotalPrice"
+                  style="color: #166534; font-weight: bold"
+                ></span>
+              </div>
+            </div>
+
+            <button
+              onclick="closeBookingModal()"
+              style="
+                width: 100%;
+                padding: 12px;
+                border-radius: 12px;
+                background: #e5e7eb;
+                border: none;
+                font-weight: bold;
+                cursor: pointer;
+              "
+            >
+              เสร็จสิ้น / ปิดหน้าต่าง
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="lightboxModal"
+      class="lightbox-modal"
+      onclick="if (event.target === this) closeLightbox();"
+    >
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <button class="lightbox-prev" onclick="prevLightboxImg()">❮</button>
+      <button class="lightbox-next" onclick="nextLightboxImg()">❯</button>
+
+      <div class="lightbox-img-wrapper">
+        <img id="lightboxImg" class="lightbox-img" src="" alt="ภาพขนาดใหญ่" />
+        <div class="lightbox-counter" id="lightboxCounter">1 / 4</div>
+        <div class="lightbox-thumbnails" id="lightboxThumbnails"></div>
+      </div>
+    </div>
+
+    <script>
+      let currentImgIndex = 0;
+      const thumbnails = [
+        { src: "image/เขาใหญ่ 1.jpg" },
+        { src: "image/เขาใหญ่ 2.jpg" },
+        { src: "image/เขาใหญ่ 3.jpg" },
+        { src: "image/เขาใหญ่ 4.jpg" },
+      ];
+
+      function changeImage(element, src, index) {
+        document.getElementById("mainImage").src = src;
+        document
+          .querySelectorAll(".thumbnail")
+          .forEach((el) => el.classList.remove("active"));
+        element.classList.add("active");
+        currentImgIndex = index;
+        document.getElementById("imageCount").innerText =
+          index + 1 + " / " + thumbnails.length;
+      }
+
+      function openLightbox(index) {
+        if (typeof index === "number") currentImgIndex = index;
+        updateLightbox();
+        document.getElementById("lightboxModal").classList.add("active");
+      }
+      function closeLightbox() {
+        document.getElementById("lightboxModal").classList.remove("active");
+      }
+
+      function updateLightbox() {
+        const targetSrc = thumbnails[currentImgIndex].src;
+        const lbImg = document.getElementById("lightboxImg");
+        const lbCounter = document.getElementById("lightboxCounter");
+
+        if (lbImg) lbImg.src = targetSrc;
+        if (lbCounter)
+          lbCounter.innerText = currentImgIndex + 1 + " / " + thumbnails.length;
+
+        const container = document.getElementById("lightboxThumbnails");
+        if (container) {
+          container.innerHTML = "";
+          thumbnails.forEach((thumb, idx) => {
+            const img = document.createElement("img");
+            img.src = thumb.src;
+            if (idx === currentImgIndex) img.classList.add("active");
+            img.onclick = () => {
+              currentImgIndex = idx;
+              updateLightbox();
+            };
+            container.appendChild(img);
+          });
+        }
+      }
+
+      function prevLightboxImg() {
+        currentImgIndex =
+          (currentImgIndex - 1 + thumbnails.length) % thumbnails.length;
+        updateLightbox();
+      }
+      function nextLightboxImg() {
+        currentImgIndex = (currentImgIndex + 1) % thumbnails.length;
+        updateLightbox();
+      }
+
+      const unitPrice = 1800;
+      function openBookingModal() {
+        document.getElementById("bookingModal").classList.add("active");
+        document.getElementById("bookingForm").style.display = "block";
+        document.getElementById("bookingSuccess").style.display = "none";
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById("travelDate").value = tomorrow
+          .toISOString()
+          .split("T")[0];
+        updateTotalPrice();
+      }
+      function closeBookingModal() {
+        document.getElementById("bookingModal").classList.remove("active");
+      }
+      function updateTotalPrice() {
+        const count =
+          parseInt(document.getElementById("personCount").value) || 1;
+        document.getElementById("totalPriceDisplay").innerText =
+          "฿" + (unitPrice * count).toLocaleString();
+      }
+
+      function submitBooking(e) {
+        e.preventDefault();
+        const name = document.getElementById("custName").value;
+        const date = document.getElementById("travelDate").value;
+        const count = document.getElementById("personCount").value;
+        const phoneEl = document.getElementById("custPhone");
+        const phone = phoneEl ? phoneEl.value : "";
+        const total = unitPrice * parseInt(count);
+
+        const bookingId =
+          "#TRIP-" + Math.floor(100000 + Math.random() * 900000);
+        document.getElementById("resBookingId").innerText = bookingId;
+        document.getElementById("resCustName").innerText = name;
+        document.getElementById("resTravelDate").innerText = date;
+        document.getElementById("resPersonCount").innerText = count + " ท่าน";
+        document.getElementById("resTotalPrice").innerText =
+          "฿" + total.toLocaleString();
+
+        try {
+          const history = JSON.parse(
+            localStorage.getItem("travelBookings") || "[]",
+          );
+          history.unshift({
+            id: bookingId,
+            packageTitle: "อุทยานแห่งชาติเขาใหญ่ (นครราชสีมา)",
+            custName: name,
+            phone: phone,
+            travelDate: date,
+            personCount: count + " ท่าน",
+            totalPrice: total,
+            createdDate: new Date().toLocaleDateString("th-TH", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
+          });
+          localStorage.setItem("travelBookings", JSON.stringify(history));
+        } catch (err) {}
+
+        document.getElementById("bookingForm").style.display = "none";
+        document.getElementById("bookingSuccess").style.display = "block";
+      }
+
+      function loadLiveRoute(destinationQuery, iframeId, statusId) {
+        const iframe = document.getElementById(iframeId || "detailMapIframe");
+        const statusEl = document.getElementById(statusId || "routeStatusMsg");
+        if (statusEl) {
+          statusEl.style.color = "#2563eb";
+          statusEl.innerHTML = "⏳ กำลังระบุตำแหน่งปัจจุบันของคุณ...";
+        }
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              const lat = position.coords.latitude;
+              const lng = position.coords.longitude;
+              if (iframe)
+                iframe.src =
+                  "https://maps.google.com/maps?saddr=" +
+                  lat +
+                  "," +
+                  lng +
+                  "&daddr=" +
+                  encodeURIComponent(destinationQuery) +
+                  "&output=embed";
+              if (statusEl) {
+                statusEl.style.color = "#16a34a";
+                statusEl.innerHTML =
+                  "🟢 แสดงเส้นทางจากตำแหน่งปัจจุบันของคุณเรียบร้อยแล้ว";
+              }
+            },
+            function (error) {
+              if (iframe)
+                iframe.src =
+                  "https://maps.google.com/maps?saddr=My+Location&daddr=" +
+                  encodeURIComponent(destinationQuery) +
+                  "&output=embed";
+              if (statusEl) {
+                statusEl.style.color = "#d97706";
+                statusEl.innerHTML =
+                  "⚠️ ไม่สามารถเข้าถึง GPS ได้ (แสดงเส้นทางโดยประมาณ)";
+              }
+            },
+            { timeout: 8000, enableHighAccuracy: true },
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

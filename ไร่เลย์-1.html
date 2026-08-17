@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>วัดพระแก้ว</title>
+
+    <link rel="stylesheet" href="CSS-1.css" />
+  </head>
+
+  <body>
+    <div class="topbar">
+      <div class="top-left">
+        <a href="index.html" class="back-btn" title="กลับหน้าแรก">← 🏠 หน้าแรก</a>
+        <div>
+          <h3 style="margin: 0">อ่าวไร่เลย์</h3>
+          <small>📍 กระบี่</small>
+        </div>
+      </div>
+      <div class="rating">⭐ 4.9</div>
+    </div>
+
+    <div class="hero-container">
+      <img
+        id="mainImage"
+        src="image/ไร่เลย์ 1.jpeg"
+        class="hero"
+        onclick="openLightbox(currentImgIndex)"
+        title="คลิกเพื่อขยายภาพขนาดเต็ม"
+      />
+      <div class="image-count" id="imageCount">1 / 4</div>
+      <button class="expand-img-btn" onclick="openLightbox(currentImgIndex)">
+        🔍 ดูภาพขนาดใหญ่
+      </button>
+    </div>
+
+    <div class="thumbnail-container">
+      <img
+        src="image/ไร่เลย์ 2.jpg"
+        class="thumbnail active"
+        onclick="changeImage(this, 0)"
+      />
+      <img
+        src="image/ไร่เลย์ 3.jpg"
+        class="thumbnail"
+        onclick="changeImage(this, 1)"
+      />
+      <img
+        src="image/ไร่เลย์ 4.jpg"
+        class="thumbnail"
+        onclick="changeImage(this, 2)"
+      />
+      <img
+        src="image/ไร่เลย์ 5.webp"
+        class="thumbnail"
+        onclick="changeImage(this, 3)"
+      />
+    </div>
+
+    <div class="content">
+      <!-- LEFT SIDE -->
+      <div>
+        <div class="box">
+          <h2>เกี่ยวกับสถานที่</h2>
+          <p>
+            อ่าวไร่เลย์เป็นชายหาดที่สวยงามและเงียบสงบ
+            ล้อมรอบด้วยหน้าผาหินปูนสูงชันที่งดงาม ไม่มีถนนเข้าถึง
+            ต้องเดินทางด้วยเรือหางยาวเท่านั้น ทำให้ยังคงความเป็นธรรมชาติอยู่มาก
+            เป็นจุดหมายปลายทางที่นิยมสำหรับนักปีนหน้าผาจากทั่วโลก
+            นอกจากนี้ยังมีหาดทรายขาวนวลและน้ำทะเลใสสวยงาม
+            มีถ้ำพระนางและถ้ำพระนายให้สำรวจ
+          </p>
+        </div>
+
+        <!-- ไฮไลต์เด่น -->
+        <div class="highlight-card">
+          <h2>ไฮไลต์เด่น</h2>
+
+          <div class="highlight-item">
+            <div class="check">✓</div>
+            หน้าผาหินปูนสูงชัน
+          </div>
+
+          <div class="highlight-item">
+            <div class="check">✓</div>
+            หาดทรายขาวและน้ำทะเลใส
+          </div>
+
+          <div class="highlight-item">
+            <div class="check">✓</div>
+            ถ้ำพระนางและจุดชมวิว
+          </div>
+
+          <div class="highlight-item">
+            <div class="check">✓</div>
+            จุดปีนหน้าผาระดับโลก
+          </div>
+        </div>
+
+        <!-- กิจกรรม -->
+        <div class="activity-card">
+          <h2>กิจกรรมที่น่าสนใจ</h2>
+          <div class="activity-grid">
+            <div class="activity-item">
+              <div class="dot"></div>
+              ปีนหน้าผาหินปูน
+            </div>
+            <div class="activity-item">
+              <div class="dot"></div>
+              ดำน้ำตื้นชมปะการัง
+            </div>
+            <div class="activity-item">
+              <div class="dot"></div>
+              คายัคและแพดเดิลบอร์ด
+            </div>
+            <div class="activity-item">
+              <div class="dot"></div>
+              เดินป่าไปถ้ำพระนาง
+            </div>
+          </div>
+        </div>
+
+        <!-- เส้นทางและการเดินทาง -->
+        <div
+          class="route-card"
+          style="
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 10px;
+              margin-bottom: 15px;
+            "
+          >
+            <h2 style="margin: 0">🗺️ เส้นทางและการเดินทาง</h2>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=อ่าวไร่เลย์+กระบี่"
+                target="_blank"
+                class="nav-map-btn"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  padding: 10px 18px;
+                  border-radius: 20px;
+                  background: linear-gradient(135deg, #10b981, #059669);
+                  color: white;
+                  text-decoration: none;
+                  font-weight: bold;
+                  font-size: 14px;
+                  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+                "
+              >
+                🚀 นำทางทันทีจากตำแหน่งปัจจุบัน
+              </a>
+              <button
+                type="button"
+                onclick="
+                  loadLiveRoute(
+                    'อ่าวไร่เลย์+กระบี่',
+                    'detailMapIframe',
+                    'routeStatusMsg',
+                  )
+                "
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  padding: 10px 18px;
+                  border-radius: 20px;
+                  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                  color: white;
+                  border: none;
+                  font-weight: bold;
+                  font-size: 14px;
+                  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                  cursor: pointer;
+                "
+              >
+                🧭 แสดงเส้นทางบนแผนที่ด้านล่าง
+              </button>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 15px;
+              margin-bottom: 15px;
+            "
+          >
+            <div
+              style="
+                background: #f8fafc;
+                padding: 15px;
+                border-radius: 12px;
+                border: 1px solid #e2e8f0;
+              "
+            >
+              <h4 style="margin: 0 0 5px; color: #1e293b">
+                🚗 ขับรถไปยังท่าเรือ
+              </h4>
+              <p style="margin: 0; font-size: 14px; color: #475569">
+                ขับรถมาจอดรับฝากรถที่ท่าเรืออ่าวน้ำเมา หรือหาดอ่าวนาง
+                (เนื่องจากไร่เลย์มีภูเขาหินปูนล้อมรอบ ไม่มีถนนเข้าถึง)
+              </p>
+            </div>
+            <div
+              style="
+                background: #f8fafc;
+                padding: 15px;
+                border-radius: 12px;
+                border: 1px solid #e2e8f0;
+              "
+            >
+              <h4 style="margin: 0 0 5px; color: #1e293b">⛵ ต่อเรือหางยาว</h4>
+              <p style="margin: 0; font-size: 14px; color: #475569">
+                นั่งเรือหางยาวจากท่าเรืออ่าวน้ำเมาหรืออ่าวนาง ใช้เวลาประมาณ 15
+                นาที นำท่านมาส่งที่หาดไร่เลย์ตะวันออก/ตะวันตก
+              </p>
+            </div>
+          </div>
+
+          <div
+            id="routeStatusMsg"
+            style="font-size: 13px; margin-bottom: 8px; font-weight: 600"
+          ></div>
+          <div
+            style="
+              border-radius: 16px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              height: 260px;
+            "
+          >
+            <iframe
+              id="detailMapIframe"
+              src="https://maps.google.com/maps?q=อ่าวไร่เลย์+กระบี่&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- รีวิว -->
+        <div class="review-card">
+          <h2>รีวิวจากนักท่องเที่ยว</h2>
+
+          <div class="review-item">
+            <img src="image/ต 5.jpg" class="avatar" />
+            <div class="review-content">
+              <strong>อนุชา ภูเขา</strong> <span class="star-badge">⭐ 4.7</span
+              ><br />
+              <small>8 กุมภาพันธ์ 2569</small>
+              <p>
+                สวยงามมาก หาดสงบ วิวสวย เหมาะกับคนรักธรรมชาติ
+                ได้ลองปีนหน้าผาสนุกมาก
+              </p>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <img src="image/ต 6.jpg" class="avatar" />
+            <div class="review-content">
+              <strong>Lisa Anderson</strong> <span class="star-badge">⭐ 5</span
+              ><br />
+              <small>3 กุมภาพันธ์ 2569</small>
+              <p>
+                Paradise on Earth! The limestone cliffs are stunning. Perfect
+                for rock climbing and relaxing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE PRICE -->
+      <div class="price-box">
+        <div class="price-label">💲 ช่วงราคา</div>
+        <div class="price-big">฿1,800 - ฿3,500</div>
+        <div class="per-person">ต่อคน</div>
+
+        <div class="info-row">
+          <div class="icon-circle">⏰</div>
+          <div>
+            <small>ระยะเวลา</small>
+            <div class="info-text">ครึ่งวัน (8-9 ชั่วโมง)</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="icon-circle">📅</div>
+          <div>
+            <small>เวลาที่เหมาะสม</small>
+            <div class="info-text">พฤศจิกายน - เมษายน</div>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <h3>รวมในแพ็กเกจ</h3>
+        <ul class="package-list">
+          <li>✔ รถรับ-ส่งจากโรงแรม</li>
+          <li>✔ ค่าเรือหางยาว</li>
+          <li>✔ อาหารกลางวัน</li>
+          <li>✔ มัคคุเทศก์</li>
+          <li>✔ อุปกรณ์ดำน้ำ</li>
+        </ul>
+
+        <div class="book-btn" onclick="openBookingModal()">จองทริปเลย</div>
+      </div>
+    </div>
+
+    <!-- โมดอลฟอร์มจองทริป -->
+    <div id="bookingModal" class="booking-modal-overlay">
+      <div class="booking-modal">
+        <div class="booking-header">
+          <button class="close-booking-btn" onclick="closeBookingModal()">
+            ✕
+          </button>
+          <h2>✈️ แบบฟอร์มจองแพ็กเกจท่องเที่ยว</h2>
+          <p id="bookingPackageTitle">จองทริป: อ่าวไร่เลย์ กระบี่</p>
+        </div>
+
+        <div class="booking-body">
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="booking-field">
+              <label>👤 ชื่อ-นามสกุล ผู้เดินทางหลัก *</label>
+              <input
+                type="text"
+                id="custName"
+                required
+                placeholder="กรอกชื่อ-นามสกุล"
+              />
+            </div>
+
+            <div class="booking-field">
+              <label>📞 เบอร์โทรศัพท์ติดต่อ *</label>
+              <input
+                type="tel"
+                id="custPhone"
+                required
+                placeholder="08X-XXX-XXXX"
+              />
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px"
+            >
+              <div class="booking-field">
+                <label>📅 วันที่ออกเดินทาง *</label>
+                <input type="date" id="travelDate" required />
+              </div>
+              <div class="booking-field">
+                <label>👥 จำนวนผู้เดินทาง *</label>
+                <select id="personCount" onchange="updateTotalPrice()">
+                  <option value="1">1 คน</option>
+                  <option value="2" selected>2 คน</option>
+                  <option value="3">3 คน</option>
+                  <option value="4">4 คน</option>
+                  <option value="5">5 คนขึ้นไป</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="booking-field">
+              <label>📝 หมายเหตุเพิ่มเติม (ถ้ามี)</label>
+              <textarea
+                id="specialReq"
+                rows="2"
+                placeholder="ความต้องการเพิ่มเติม เช่น อุปกรณ์ปีนผา/ดำน้ำ"
+              ></textarea>
+            </div>
+
+            <div class="booking-price-summary">
+              <div>
+                <div style="font-size: 12px; color: #6b7280">ราคารวมสุทธิ</div>
+                <div
+                  id="totalPriceDisplay"
+                  style="font-size: 22px; font-weight: bold; color: #2563eb"
+                >
+                  ฿4,400
+                </div>
+              </div>
+              <div style="font-size: 12px; color: #10b981; font-weight: 600">
+                ✓ ฟรีค่าธรรมเนียม
+              </div>
+            </div>
+
+            <button type="submit" class="confirm-booking-btn">
+              💳 ยืนยันการจองทริป
+            </button>
+          </form>
+
+          <!-- หน้าแสดงความสำเร็จในการจอง -->
+          <div id="bookingSuccess" class="booking-success">
+            <div class="booking-success-icon">🎉</div>
+            <h3 style="margin: 0 0 5px; color: #166534">
+              จองแพ็กเกจท่องเที่ยวสำเร็จ!
+            </h3>
+            <p style="margin: 0 0 15px; font-size: 14px; color: #4b5563">
+              ขอบคุณที่ไว้วางใจ ทางเจ้าหน้าที่จะติดต่อกลับยืนยันภายใน 24 ชม.
+            </p>
+
+            <div
+              style="
+                background: #f8fafc;
+                padding: 15px;
+                border-radius: 14px;
+                border: 1px solid #e2e8f0;
+                text-align: left;
+                font-size: 13px;
+                margin-bottom: 15px;
+                line-height: 1.6;
+              "
+            >
+              <div>
+                <strong>รหัสการจอง:</strong>
+                <span
+                  id="resBookingId"
+                  style="color: #2563eb; font-weight: bold"
+                  >#TRIP-884920</span
+                >
+              </div>
+              <div>
+                <strong>ชื่อผู้เดินทาง:</strong> <span id="resCustName"></span>
+              </div>
+              <div>
+                <strong>วันที่เดินทาง:</strong> <span id="resTravelDate"></span>
+              </div>
+              <div>
+                <strong>จำนวนผู้เดินทาง:</strong>
+                <span id="resPersonCount"></span>
+              </div>
+              <div>
+                <strong>ยอดเงินรวมสุทธิ:</strong>
+                <span
+                  id="resTotalPrice"
+                  style="color: #166534; font-weight: bold"
+                ></span>
+              </div>
+            </div>
+
+            <button
+              onclick="closeBookingModal()"
+              style="
+                width: 100%;
+                padding: 12px;
+                border-radius: 12px;
+                background: #e5e7eb;
+                border: none;
+                font-weight: bold;
+                cursor: pointer;
+              "
+            >
+              เสร็จสิ้น / ปิดหน้าต่าง
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- โมดอลขยายรูปภาพขนาดเต็ม (Lightbox Modal) -->
+    <div
+      id="lightboxModal"
+      class="lightbox-modal"
+      onclick="if (event.target === this) closeLightbox();"
+    >
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <button class="lightbox-prev" onclick="prevLightboxImg()">❮</button>
+      <button class="lightbox-next" onclick="nextLightboxImg()">❯</button>
+
+      <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="ภาพขนาดเต็ม" />
+        <div id="lightboxCounter" class="lightbox-counter">1 / 4</div>
+        <div id="lightboxThumbnails" class="lightbox-thumbnails"></div>
+      </div>
+    </div>
+
+    <script>
+      let currentImgIndex = 0;
+
+      function changeImage(element, index) {
+        const mainImage = document.getElementById("mainImage");
+        const imageCount = document.getElementById("imageCount");
+        const thumbnails = document.querySelectorAll(".thumbnail");
+
+        currentImgIndex = index;
+        mainImage.src = element.src;
+        imageCount.innerText = index + 1 + " / " + thumbnails.length;
+
+        thumbnails.forEach((img) => img.classList.remove("active"));
+        element.classList.add("active");
+      }
+
+      /* ===== ระบบ Lightbox ขยายรูปภาพขนาดใหญ่ ===== */
+      function openLightbox(index) {
+        if (typeof index === "number") {
+          currentImgIndex = index;
+        }
+        const modal = document.getElementById("lightboxModal");
+        updateLightbox();
+        modal.classList.add("active");
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightboxModal").classList.remove("active");
+      }
+
+      function updateLightbox() {
+        const thumbnails = document.querySelectorAll(".thumbnail");
+        if (thumbnails.length === 0) return;
+
+        if (currentImgIndex < 0) currentImgIndex = thumbnails.length - 1;
+        if (currentImgIndex >= thumbnails.length) currentImgIndex = 0;
+
+        const targetSrc = thumbnails[currentImgIndex].src;
+        const lbImg = document.getElementById("lightboxImg");
+        const lbCounter = document.getElementById("lightboxCounter");
+
+        if (lbImg) lbImg.src = targetSrc;
+        if (lbCounter)
+          lbCounter.innerText = currentImgIndex + 1 + " / " + thumbnails.length;
+
+        const container = document.getElementById("lightboxThumbnails");
+        if (container) {
+          container.innerHTML = "";
+          thumbnails.forEach((thumb, idx) => {
+            const img = document.createElement("img");
+            img.src = thumb.src;
+            if (idx === currentImgIndex) img.classList.add("active");
+            img.onclick = () => {
+              currentImgIndex = idx;
+              updateLightbox();
+            };
+            container.appendChild(img);
+          });
+        }
+
+        const mainImage = document.getElementById("mainImage");
+        const imageCount = document.getElementById("imageCount");
+        if (mainImage) mainImage.src = targetSrc;
+        if (imageCount)
+          imageCount.innerText =
+            currentImgIndex + 1 + " / " + thumbnails.length;
+
+        thumbnails.forEach((img, idx) => {
+          if (idx === currentImgIndex) img.classList.add("active");
+          else img.classList.remove("active");
+        });
+      }
+
+      function prevLightboxImg() {
+        currentImgIndex--;
+        updateLightbox();
+      }
+
+      function nextLightboxImg() {
+        currentImgIndex++;
+        updateLightbox();
+      }
+
+      // ปุ่มลัดคีย์บอร์ดสำหรับ Lightbox
+      document.addEventListener("keydown", function (e) {
+        const lightbox = document.getElementById("lightboxModal");
+        if (lightbox && lightbox.classList.contains("active")) {
+          if (e.key === "ArrowLeft") prevLightboxImg();
+          if (e.key === "ArrowRight") nextLightboxImg();
+          if (e.key === "Escape") closeLightbox();
+        }
+      });
+
+      /* ===== ระบบฟอร์มจองทริป ===== */
+      const unitPrice = 2200;
+
+      function openBookingModal() {
+        document.getElementById("bookingModal").classList.add("active");
+        document.getElementById("bookingForm").style.display = "block";
+        document.getElementById("bookingSuccess").style.display = "none";
+
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById("travelDate").value = tomorrow
+          .toISOString()
+          .split("T")[0];
+        updateTotalPrice();
+      }
+
+      function closeBookingModal() {
+        document.getElementById("bookingModal").classList.remove("active");
+      }
+
+      function updateTotalPrice() {
+        const count =
+          parseInt(document.getElementById("personCount").value) || 1;
+        const total = unitPrice * count;
+        document.getElementById("totalPriceDisplay").innerText =
+          "฿" + total.toLocaleString();
+      }
+
+      function submitBooking(e) {
+        e.preventDefault();
+        const name = document.getElementById("custName").value;
+        const date = document.getElementById("travelDate").value;
+        const count = document.getElementById("personCount").value;
+        const phoneEl = document.getElementById("custPhone");
+        const phone = phoneEl ? phoneEl.value : "";
+        const total = unitPrice * parseInt(count);
+
+        const bookingId =
+          "#TRIP-" + Math.floor(100000 + Math.random() * 900000);
+
+        document.getElementById("resBookingId").innerText = bookingId;
+        document.getElementById("resCustName").innerText = name;
+        document.getElementById("resTravelDate").innerText = date;
+        document.getElementById("resPersonCount").innerText = count + " ท่าน";
+        document.getElementById("resTotalPrice").innerText =
+          "฿" + total.toLocaleString();
+
+        try {
+          const history = JSON.parse(
+            localStorage.getItem("travelBookings") || "[]",
+          );
+          history.unshift({
+            id: bookingId,
+            packageTitle: document.title || "อ่าวไร่เลย์",
+            custName: name,
+            phone: phone,
+            travelDate: date,
+            personCount: count + " ท่าน",
+            totalPrice: total,
+            createdDate: new Date().toLocaleDateString("th-TH", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
+          });
+          localStorage.setItem("travelBookings", JSON.stringify(history));
+        } catch (err) {}
+
+        document.getElementById("bookingForm").style.display = "none";
+        document.getElementById("bookingSuccess").style.display = "block";
+      }
+
+      /* ===== ระบบดึงตำแหน่งปัจจุบันและแสดงเส้นทางใน iframe ===== */
+      function loadLiveRoute(destinationQuery, iframeId, statusId) {
+        const iframe = document.getElementById(iframeId || "detailMapIframe");
+        const statusEl = document.getElementById(statusId || "routeStatusMsg");
+
+        if (statusEl) {
+          statusEl.style.color = "#2563eb";
+          statusEl.innerHTML = "⏳ กำลังระบุตำแหน่งปัจจุบันของคุณ...";
+        }
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              const lat = position.coords.latitude;
+              const lng = position.coords.longitude;
+              if (iframe) {
+                iframe.src =
+                  "https://maps.google.com/maps?saddr=" +
+                  lat +
+                  "," +
+                  lng +
+                  "&daddr=" +
+                  encodeURIComponent(destinationQuery) +
+                  "&output=embed";
+              }
+              if (statusEl) {
+                statusEl.style.color = "#16a34a";
+                statusEl.innerHTML =
+                  "🟢 แสดงเส้นทางจากตำแหน่งปัจจุบันของคุณเรียบร้อยแล้ว";
+              }
+            },
+            function (error) {
+              console.warn("Geolocation error:", error);
+              if (iframe) {
+                iframe.src =
+                  "https://maps.google.com/maps?saddr=My+Location&daddr=" +
+                  encodeURIComponent(destinationQuery) +
+                  "&output=embed";
+              }
+              if (statusEl) {
+                statusEl.style.color = "#d97706";
+                statusEl.innerHTML =
+                  "⚠️ ไม่สามารถเข้าถึง GPS ได้ (แสดงเส้นทางโดยประมาณ)";
+              }
+            },
+            { timeout: 8000, enableHighAccuracy: true },
+          );
+        } else {
+          if (iframe) {
+            iframe.src =
+              "https://maps.google.com/maps?saddr=My+Location&daddr=" +
+              encodeURIComponent(destinationQuery) +
+              "&output=embed";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
